@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Buy an iPhone</title>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="wrapper">
+        <div class="logo"></div>
+        <h1>ACME inc</h1>
+      </div>
+    </div>
+    <div class="search">
+      <div class="wrapper">
+        
+          <div class="form-row">
+            <input type="text" id="searchterm" name="searchterm" placeholder="Search"/>
+            <button type="button" id="search_btn">Search</button>
+          </div>
+        
+      </div>
+    </div>
+    <div class="content wrapper">
+      
+      <div id="results" class="flex-container">
+        <p>Do a search to find iphones</p>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="wrapper">
+        <p>&copy; 2018 Fake Company</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+  <script>
+    // add events to the form to do the search
+    //document.getElementById('searchForm').addEventListener('submit', formSubmit());
+    document.getElementById('search_btn').onclick = function() {formSubmit()};
+
+    document.getElementById("searchterm").addEventListener( "keydown", function( e ) {
+      var keyCode = e.keyCode || e.which;
+      if ( keyCode === 13 ) {
+         // enter pressed
+         formSubmit();
+      }
+    }, false);
+
+    function formSubmit(){
+        var searchTxt = document.getElementById('searchterm').value;        console.log(searchTxt);
+        getIphones(searchTxt); 
+        return false;
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+/*
+
+Create a full width layout using flex box CSS properties.
+
+Add any additional CSS rules to style the form and search results output.
+
+*/
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial;
+}
+.page {
+    background: #f7f7f7
+}
+
+.header {
+	overflow: auto;
+    background: white;
+}
+
+.logo {
+	background: url(logo.png) center center no-repeat;float: left;
+	height: 100px;width: 250px;background-size: contain;
+}
+
+.footer {bottom: 0;background: #CD5242;padding: 30px 20px;color: white;font-size: 12px;}
+.footer p{
+	display: inline;
+    margin: 0;
+}
+.search{
+    background: #0f2732;
+    padding: 20px 0;
+}
+.form-row {
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    display: flex;
+}
+.form-row input {
+    flex: 1;
+    padding: 10px
+}
+
+button {
+    font-size: 16px;
+    padding: 0 20px;
+    background: #CD5242;
+    -webkit-appearance: none;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+
+.content {
+    /* min-height: 87%; */
+    clear: both;
+}
+.wrapper{	
+    margin: auto;
+    max-width: 65rem;
+}
+
+h1 {
+    margin: 0;
+    float: right;
+    line-height: 100px;
+    padding-right: 50px;
+}
+
+.resultBlock {
+    flex: 0 0 33%;
+    box-shadow: 0 2px 4px 3px rgba(158,158,158,0.1);
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    transition: all .4s linear;    
+    padding-bottom: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    max-width: 32%;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+.resultBlock:nth-child(3n) {
+    margin-right: 0;
+}
+
+div#results {
+    display: flex;
+    margin: 50px 0;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+div#results p{
+    flex:1;
+    text-align: center;
+    font-style: italic;
+}
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li:after {
+    content: ' | ';
+}
+
+li:last-child:after {
+    content: '';
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #CD5242; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    align-items: center;
+    width: 100%;
+}
+.features p:first-child {
+    border-right:1px dotted;
+    padding-right: 10px;
+    margin-right: 10px;
+    
+}
+#results .features p{
+    display:inline;
+    float:left;
+    font-size: 12px;
+    font-style: normal;
+}
+.features span {
+    display: block;
+    color: gray;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.features {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (max-width:768px){
+    .resultBlock {
+        flex: 0 0 50%;
+        max-width: 48%;
+    }
+    .resultBlock:nth-child(2n) {
+        margin-right: 0;
+    }
+    .resultBlock:nth-child(3n) {
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width:767px){
+    .resultBlock {
+        flex: 0 0 100%;
+        max-width: 98%;
+        margin-right: 0px;
+    }
+    .form-row{
+        width: 90%;
+    }
+    .header h1{
+        display: none;
+    }
+}   
